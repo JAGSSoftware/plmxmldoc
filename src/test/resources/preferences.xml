@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<preferences version="10.0">
+  <category name="Category #1">
+     <category_description>Description for Category #1</category_description>
+     <preference name="J4G_NOTREALPREF" type="String" array="false" disabled="true" protectionScope="Site" envEnabled="false">
+      <preference_description>Not a real preference</preference_description>
+      <context name="Teamcenter"></context>
+    </preference>
+    <preference name="J4G_default_relation" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Add Description</preference_description>
+      <context name="Teamcenter">
+        <value>J4G_EPM_TSForm_rel</value>
+      </context>
+    </preference>
+        <preference name="J4G_DOCItemRevision_Dataset_default_relation" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Specifies the relation that has to be created when a dataset is pasted under a J4G_DOCItemRevision. The relation specified for this preference will be the default relation that will be created between the dataset and the target J4G_DOCItemRevision.</preference_description>
+      <context name="Teamcenter">
+        <value>TC_Attaches</value>
+      </context>
+    </preference>
+    <preference name="J4G_DWGItemRevision_TIF_default_relation" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Add Description</preference_description>
+      <context name="Teamcenter">
+        <value>IMAN_Rendering</value>
+      </context>
+    </preference>
+    <preference name="J4G_PARTItemRevision_ItemRevision_default_relation" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Add Description</preference_description>
+      <context name="Teamcenter">
+        <value>TC_Is_Represented_By</value>
+      </context>
+    </preference>
+    <preference name="TC_subscribable_replica_classes" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Add Description</preference_description>
+      <context name="Teamcenter">
+        <value>ItemImpl</value>
+        <value>ItemRevisionImpl</value>
+        <value>DatasetImpl</value>
+        <value>PARTRevisionImpl</value>
+        <value>PARTImpl</value>
+        <value>DesignRevisionImpl</value>
+        <value>DesignImpl</value>
+        <value>DrawingRevisionImpl</value>
+        <value>DrawingImpl</value>
+        <value>DocumentRevisionImpl</value>
+        <value>DocumentImpl</value>
+      </context>
+    </preference>
+    <preference name="SPLM_TRACE" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>TRACE</preference_description>
+      <context name="Teamcenter">
+        <value>YES</value>
+      </context>
+    </preference>
+    <preference name="J4G_search_for_published_classes" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Add Description</preference_description>
+      <context name="Teamcenter">
+        <value>J4G_DESIGNItem</value>
+        <value>J4G_DOCItem</value>
+        <value>J4G_DWGItem</value>
+        <value>J4G_STItem</value>
+        <value>J4G_PARTItem</value>
+        <value>J4G_FLEXItem</value>
+        <value>J4G_CATAnalysis</value>
+        <value>J4G_DESIGNTable</value>
+        <value>J4G_SIMULAItem</value>
+        <value>J4G_STLItem</value>
+      </context>
+    </preference>
+    <preference name="J4G_QryGeneralSearchTypes" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>J4G_QryGeneralSearchTypes</preference_description>
+      <context name="Teamcenter">
+        <value>J4G_DESIGNItemRevision</value>
+        <value>J4G_DESIGNTableRevision</value>
+        <value>J4G_FLEXItemRevision</value>
+        <value>J4G_SIMULAItemRevision</value>
+        <value>J4G_CATAnalysisRevision</value>
+        <value>J4G_DWGItemRevision</value>
+        <value>J4G_DOCItemRevision</value>
+        <value>J4G_STLItemRevision</value>
+      </context>
+    </preference>
+    <preference name="TC_do_not_insert_imported_objects_into_folder" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Add Description</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+    <preference name="J4G_RolesWithoutRuntimeProps" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>J4G_RolesWithoutRuntimeProps</preference_description>
+      <context name="Teamcenter">
+        <value>Exchange</value>
+        <value>Import</value>
+      </context>
+    </preference>
+    <preference name="Part Revisions_FilterCriteria" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Add Description</preference_description>
+      <context name="Teamcenter">
+        <value>J4G_PARTItemRevision:object_type:J4G_PARTItemRevision</value>
+      </context>
+    </preference>
+  </category>
+  <category name="General">
+    <category_description>Add Description</category_description>
+    <preference name="AM_PROJECT_MODE" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Determines whether the system evaluates the roles in all the active projects of the logged in user, or just the role of the current project, when processing the Role in Project and Role in Projects of Object accessors. The Teamcenter servers must be restarted after setting this site preference, for the setting to become effective in Access Manager evaluation.</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+  </category>
+  <category name="Configuration.Search">
+    <category_description>Add Description</category_description>
+    <preference name="QRYColumnsShownPref" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Specifies the list of default (Favorite) saved queries used for both Teamcenter Rich/Thin clients. The values of this preference should be the localized query names.</preference_description>
+      <context name="Teamcenter">
+        <value>JAG General...</value>
+        <value>JAG Part Revision...</value>
+        <value>JAG Design Revision...</value>
+        <value>JAG Document Revision...</value>
+        <value>JAG Drawing Revision...</value>
+        <value>JAG Structure Component Revision...</value>
+        <value>JAG Materials...</value>
+        <value>JAG Regulations...</value>
+        <value>Item Revision...</value>
+        <value>Item...</value>
+        <value>General...</value>
+      </context>
+    </preference>
+  </category>
+  <category name="Workflow">
+    <category_description>Add Description</category_description>
+    <preference name="CR_allow_alternate_procedures" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Valid values for this preference can be "any", "Assigned" or "none". any - New process dialog shows the All/Assigned radio buttons with "All" option pre-selected. Assigned - New process dialog shows the All/Assigned radio buttons with "Assigned" option pre-selected. none - New process dialog does not show the All/Assigned radio buttons. It will populate the process template combobox with the assigned templates. If there are no assigned templates for the group/type in question then the process template combobox will be empty. If you specify "none", then for a user to initiate a process on an object, you must assign the process template in the Process designer-&gt;Edit-&gt;Template Filter window for that object type.</preference_description>
+      <context name="Teamcenter">
+        <value>none</value>
+      </context>
+    </preference>
+  </category>
+  <category name="General">
+    <category_description>Add Description</category_description>
+    <preference name="TC_project_validate_conditions" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Add Description</preference_description>
+      <context name="Teamcenter">
+        <value>3</value>
+      </context>
+    </preference>
+  </category>
+  <category name="Product Structure.PSE.Behavior">
+    <category_description>Add Description</category_description>
+    <preference name="TC_BOM_Precision_Preference" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Specifies the BOM precision to be used during the creation of new BOMViews/BOMViewRevisions. Valid values are Precise/Imprecise.</preference_description>
+      <context name="Teamcenter">
+        <value>Precise</value>
+      </context>
+    </preference>
+  </category>
+  <category name="Workflow">
+    <category_description>Add Description</category_description>
+    <preference name="EPM_multiple_processes_targets" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Site preference to enable/disable multiple processes for same objects. Valid values are ON/OFF. ON - Multiple processes feature is enabled. OFF - Multiple processes feature is disabled.</preference_description>
+      <context name="Teamcenter">
+        <value>ON</value>
+      </context>
+    </preference>
+  </category>
+  <category name="General">
+    <category_description>Add Description</category_description>
+    <preference name="TCCheckoutReserveOnly" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Specifies Business Objects for which a restore copy will not be created during Check-Out.
+If the Business Object supports Sequences, a new sequence will not be created during Check-Out.
+Cancel Check-Out will not be available for these Business Objects.
+Valid values are Business Objects for which Check-Out is allowed.</preference_description>
+      <context name="Teamcenter">
+        <value>PSBOMView</value>
+        <value>PSBOMViewRevision</value>
+        <value>J4G_STItem</value>
+        <value>J4G_STItemRevision</value>
+        <value>J4G_IMPORTItem</value>
+        <value>J4G_IMPORTItemRevision</value>
+        <value>J4G_WORKENVItem</value>
+        <value>J4G_WORKENVItemRevision</value>
+        <value>J4G_CATAnalysis</value>
+        <value>J4G_CATAnalysisRevision</value>
+        <value>J4G_DESIGNItem</value>
+        <value>J4G_DESIGNItemRevision</value>
+        <value>J4G_DESIGNTable</value>
+        <value>J4G_DESIGNTableRevision</value>
+        <value>J4G_DOCItem</value>
+        <value>J4G_DOCItemRevision</value>
+        <value>J4G_DWGItem</value>
+        <value>J4G_DWGItemRevision</value>
+        <value>J4G_PARTItem</value>
+        <value>J4G_PARTItemRevision</value>
+      </context>
+    </preference>
+  </category>
+  <category name="Interface.Thin Client.General">
+    <category_description>Add Description</category_description>
+    <preference name="WEB_help_server" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Defines the URL of the site's Web help page.
+Example of valid values:
+http://host:port/tc/help/index.html#filename:thin_client_dhtml:getting_started .
+If you are using the same web server for help and Teamcenter Thin Client, a relative URL can be used.
+This is a site preference.</preference_description>
+      <context name="Teamcenter">
+        <value>/help/index.html#filename:thin_client_dhtml:getting_started</value>
+      </context>
+    </preference>
+  </category>
+  <category name="Interface.Thin Client.General">
+    <category_description>Add Description</category_description>
+    <preference name="WEB_core_help_server" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Defines the URL of the site's core TC help page (used to create help::Tc link).
+This is a site preference.</preference_description>
+      <context name="Teamcenter">
+        <value>/help/index.html</value>
+      </context>
+    </preference>
+  </category>
+  <category name="General">
+    <category_description>Add Description</category_description>
+    <preference name="TC_multi_site_project_member_bypass" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Add Description</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+    <preference name="TC_QRY_search_result_display_mode" type="Integer" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Specifies the search result display mode.
+Valid values are:
+* 1: The total number of found objects is not displayed. This is the default value.
+* 2: The total number of found objects only accounts for objects for which the user has access privileges.</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+  </category>
+</preferences>

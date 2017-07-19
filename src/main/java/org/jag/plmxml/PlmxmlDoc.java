@@ -69,10 +69,8 @@ public class PlmxmlDoc {
             template.process(root, writer);
         } catch (TemplateException e) {
             LOGGER.warn("TemplateException happened: [{}]", e.getMessage(), e);
-            throw new RenderException(e);
         } catch (IOException e) {
             LOGGER.warn("An exception happened when rendering the categories [{}]", categories, e);
-            throw new RenderException(e);
         }
     }
 

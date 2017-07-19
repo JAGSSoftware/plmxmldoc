@@ -92,7 +92,7 @@ public class PlmxmlDoc {
         } catch (ParseException e) {
             LOGGER.warn("Parsing exception: [{}]", e.getMessage(), e);
         } catch (IOException e) {
-            LOGGER.warn(e.getMessage(), e);
+            LOGGER.warn("An exception happened when returning the template with name [{}]", templateName, e);
         }
         return null;
     }

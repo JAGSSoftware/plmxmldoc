@@ -5,15 +5,15 @@
  * documentation files (the "Software"), to deal in the Software without restriction, including without limitation the
  * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to
  * permit persons to whom the Software is furnished to do so, subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions
  * of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
  * THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
  * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE. 
+ * SOFTWARE.
  */
 
 package org.jag.plmxml.service;
@@ -43,7 +43,7 @@ import com.google.inject.Inject;
  * @author Jose A. Garcia
  */
 class PlmxmlServiceBean implements PlmxmlService {
-    private static final Logger LOGGER = LoggerFactory.getLogger(PlmxmlMapperBean.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(PlmxmlServiceBean.class);
 
     private final PlmxmlMapper mapper;
 
@@ -70,7 +70,7 @@ class PlmxmlServiceBean implements PlmxmlService {
             final Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
             return merge(map((PreferencesPlmxml) unmarshaller.unmarshal(reader), definedIn));
         } catch (JAXBException e) {
-            LOGGER.info(e.getMessage(), e);
+            LOGGER.info("Error when unmarshalling the preference defined in [{}]", definedIn, e);
         }
 
         return new CategoriesImpl();

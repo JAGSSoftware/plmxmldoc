@@ -18,9 +18,10 @@
 
 package org.jag.plmxml.service;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
@@ -43,10 +44,18 @@ import com.google.inject.Inject;
  * @author Jose A. Garcia
  */
 class PlmxmlServiceBean implements PlmxmlService {
+    /** Logger. */
     private static final Logger LOGGER = LoggerFactory.getLogger(PlmxmlServiceBean.class);
 
+    /** Mapper between domain objects. */
     private final PlmxmlMapper mapper;
 
+    /**
+     * Constructor.
+     *
+     * @param mapper
+     *            Domain objects mapper
+     */
     @Inject
     public PlmxmlServiceBean(final PlmxmlMapper mapper) {
         this.mapper = mapper;
@@ -54,7 +63,7 @@ class PlmxmlServiceBean implements PlmxmlService {
 
     @Override
     public Categories readPreferences(final String inputFilename) {
-        try (final Reader reader = new FileReader(inputFilename)) {
+        try (final Reader reader = new InputStreamReader(new FileInputStream(inputFilename), "UTF-8")) {
             return readPreferences(reader, inputFilename);
         } catch (FileNotFoundException e) {
             LOGGER.warn("File not found: [{}]", e.getMessage(), e);

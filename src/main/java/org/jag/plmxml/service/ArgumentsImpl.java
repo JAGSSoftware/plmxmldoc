@@ -29,48 +29,84 @@ import org.jag.plmxml.domain.ProjectInfo;
  * @author Jose A. Garcia
  */
 class ArgumentsImpl implements Arguments {
+    /** */
     private static final String DEFAULT_OUTPUT_FILENAME = "output.html";
+    /** */
     private ProjectInfo project;
+    /** */
     private Information information;
+    /** */
     private final List<String> inputFilenames = new ArrayList<>();
+    /** */
     private String outputFilename = DEFAULT_OUTPUT_FILENAME;
 
+    /**
+     *
+     */
     public ArgumentsImpl() {
         // Empty body
     }
 
+    /**
+     *
+     */
     @Override
     public ProjectInfo getProjectInfo() {
         return project;
     }
 
+    /**
+     *
+     * @param project
+     */
     public void setProject(final ProjectInfo project) {
         this.project = project;
     }
 
+    /**
+     *
+     */
     @Override
     public List<String> getInputFilenames() {
         return inputFilenames;
     }
 
+    /**
+     *
+     * @param filename
+     */
     public void addInputFilename(final String filename) {
         this.inputFilenames.add(filename);
     }
 
+    /**
+     *
+     */
     @Override
     public String getOutputFilename() {
         return outputFilename;
     }
 
+    /**
+     *
+     * @param outputFilename
+     */
     public void setOutputFilename(final String outputFilename) {
         this.outputFilename = outputFilename;
     }
 
+    /**
+     *
+     */
     @Override
     public Information getInformation() {
         return information;
     }
 
+    /**
+     *
+     * @param information
+     */
     public void setInformation(final Information information) {
         this.information = information;
     }

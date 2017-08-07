@@ -62,6 +62,9 @@ class PlmxmlServiceBean implements PlmxmlService {
         this.mapper = mapper;
     }
 
+    /**
+     *
+     */
     @Override
     public Categories readPreferences(final String inputFilename) {
         try (final Reader reader = new InputStreamReader(new FileInputStream(inputFilename),
@@ -75,6 +78,12 @@ class PlmxmlServiceBean implements PlmxmlService {
         return new CategoriesImpl();
     }
 
+    /**
+     *
+     * @param reader
+     * @param definedIn
+     * @return
+     */
     public Categories readPreferences(final Reader reader, final String definedIn) {
         try {
             final JAXBContext jaxbContext = JAXBContext.newInstance(PreferencesPlmxml.class);
@@ -87,6 +96,12 @@ class PlmxmlServiceBean implements PlmxmlService {
         return new CategoriesImpl();
     }
 
+    /**
+     *
+     * @param preferences
+     * @param definedIn
+     * @return
+     */
     public List<Category> map(final PreferencesPlmxml preferences, final String definedIn) {
         if (preferences == null) {
             return new ArrayList<>();
@@ -94,18 +109,27 @@ class PlmxmlServiceBean implements PlmxmlService {
 
         final List<Category> categories = new ArrayList<>();
         for (final CategoryPlmxml rawCategory : preferences.getCategories()) {
-            final Category category = mapper.map(rawCategory, definedIn);
-            categories.add(category);
+            categories.add(mapper.map(rawCategory, definedIn));
         }
         return categories;
     }
 
+    /**
+     *
+     * @param categories
+     * @return
+     */
     public Categories merge(final List<Category> categories) {
         final CategoriesImpl mergedCategories = new CategoriesImpl();
         merge(mergedCategories, categories);
         return mergedCategories;
     }
 
+    /**
+     *
+     * @param mergedCategories
+     * @param categories
+     */
     public void merge(final CategoriesImpl mergedCategories, final List<Category> categories) {
         for (final Category category : categories) {
             final Category existingCategory = mergedCategories.findCategory(category);
@@ -120,6 +144,9 @@ class PlmxmlServiceBean implements PlmxmlService {
         }
     }
 
+    /**
+     *
+     */
     @Override
     public Categories readPreferences(final List<String> inputFilenames) {
         final CategoriesImpl mergedCategories = new CategoriesImpl();

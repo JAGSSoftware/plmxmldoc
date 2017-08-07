@@ -45,6 +45,12 @@ public final class Main {
         // Empty body
     }
 
+    /**
+     * Main function
+     *
+     * @param args
+     *            program arguments as listed in the command line
+     */
     public static void main(String[] args) {
         final Injector injector = Guice.createInjector(new ServiceModule());
         final ArgumentsService argumentsService = injector.getInstance(ArgumentsService.class);
@@ -52,7 +58,7 @@ public final class Main {
         final Arguments arguments = argumentsService.parse(args);
         if (arguments == null) {
             argumentsService.printHelp();
-            System.exit(-1);
+            return;
         }
 
         final PlmxmlDoc plmxmlDoc = new PlmxmlDoc(injector.getInstance(PlmxmlService.class), arguments);

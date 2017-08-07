@@ -23,6 +23,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,7 +64,8 @@ class PlmxmlServiceBean implements PlmxmlService {
 
     @Override
     public Categories readPreferences(final String inputFilename) {
-        try (final Reader reader = new InputStreamReader(new FileInputStream(inputFilename), "UTF-8")) {
+        try (final Reader reader = new InputStreamReader(new FileInputStream(inputFilename),
+                Charset.forName("UTF-8"))) {
             return readPreferences(reader, inputFilename);
         } catch (FileNotFoundException e) {
             LOGGER.warn("File not found: [{}]", e.getMessage(), e);

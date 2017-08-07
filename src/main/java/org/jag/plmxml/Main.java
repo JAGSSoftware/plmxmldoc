@@ -17,9 +17,11 @@
  */
 package org.jag.plmxml;
 
-import java.io.FileWriter;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.io.Writer;
+import java.nio.charset.Charset;
 
 import org.jag.plmxml.domain.Arguments;
 import org.jag.plmxml.domain.Categories;
@@ -54,7 +56,8 @@ public final class Main {
 
         final PlmxmlDoc plmxmlDoc = new PlmxmlDoc(injector.getInstance(PlmxmlService.class), arguments);
         final Categories categories = plmxmlDoc.readPreferences();
-        try (final Writer writer = new FileWriter(arguments.getOutputFilename())) {
+        try (final Writer writer = new OutputStreamWriter(new FileOutputStream(arguments.getOutputFilename()),
+                Charset.forName("UTF-8"))) {
             plmxmlDoc.renderHtml(categories, writer);
         } catch (IOException e) {
             LOGGER.error("Error when rendering the categories [{}]", categories, e);

@@ -41,19 +41,42 @@ import freemarker.template.TemplateNotFoundException;
  * @author Jose A. Garcia
  */
 public class PlmxmlDoc {
+    /** Logger. */
     private static final Logger LOGGER = LoggerFactory.getLogger(PlmxmlDoc.class);
+
+    /** Service. */
     private final PlmxmlService plmxmlService;
+
+    /** Arguments object. */
     private final Arguments arguments;
 
+    /**
+     *
+     * @param plmxmlService
+     * @param arguments
+     */
     public PlmxmlDoc(final PlmxmlService plmxmlService, final Arguments arguments) {
         this.plmxmlService = plmxmlService;
         this.arguments = arguments;
     }
 
+    /**
+     * Read the preferences from the input files specified by name in the arguments.
+     *
+     * @return Categories from the preferences files
+     */
     public Categories readPreferences() {
         return plmxmlService.readPreferences(arguments.getInputFilenames());
     }
 
+    /**
+     * Renders the report of categories and preferences.
+     * 
+     * @param categories
+     *            Categories to be rendered
+     * @param writer
+     *            report writer with categories and preferences
+     */
     public void renderHtml(final Categories categories, final Writer writer) {
         final Template template = getTemplate("preference2html.ftl");
         if (template == null) {

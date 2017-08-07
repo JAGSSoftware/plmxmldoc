@@ -38,6 +38,7 @@ import com.google.inject.Injector;
  * @author Jose A. Garcia
  */
 public final class Main {
+    /** Logger. */
     private static final Logger LOGGER = LoggerFactory.getLogger(Main.class);
 
     private Main() {

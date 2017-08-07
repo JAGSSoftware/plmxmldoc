@@ -17,6 +17,8 @@
  */
 package org.jag.plmxml.service;
 
+import java.util.Locale;
+
 import org.jag.plmxml.domain.Category;
 import org.jag.plmxml.domain.Preference;
 import org.jag.plmxml.domain.ProtectionScope;
@@ -85,7 +87,7 @@ class PlmxmlMapperBean implements PlmxmlMapper {
      * @return
      */
     public Type mapType(final String type) {
-        return Type.valueOf(type.toUpperCase());
+        return Type.valueOf(type.toUpperCase(Locale.getDefault()));
     }
 
     /**
@@ -95,11 +97,11 @@ class PlmxmlMapperBean implements PlmxmlMapper {
      */
     public ProtectionScope mapProtectionScope(final String protectionScope) {
         if (Strings.isNullOrEmpty(protectionScope)
-                || !ProtectionScope.getNames().contains(protectionScope.toUpperCase())) {
+                || !ProtectionScope.getNames().contains(protectionScope.toUpperCase(Locale.getDefault()))) {
             LOGGER.warn("ProtectionScope [{}] not identified.", protectionScope);
             return null;
         }
 
-        return ProtectionScope.valueOf(protectionScope.toUpperCase());
+        return ProtectionScope.valueOf(protectionScope.toUpperCase(Locale.getDefault()));
     }
 }

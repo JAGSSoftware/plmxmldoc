@@ -5,15 +5,15 @@
  * documentation files (the "Software"), to deal in the Software without restriction, including without limitation the
  * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to
  * permit persons to whom the Software is furnished to do so, subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions
  * of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
  * THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
  * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE. 
+ * SOFTWARE.
  */
 package org.jag.plmxml.service;
 
@@ -32,12 +32,19 @@ import com.google.common.base.Strings;
  * @author Jose A. Garcia
  */
 class PlmxmlMapperBean implements PlmxmlMapper {
+    /** Logger. */
     private static final Logger LOGGER = LoggerFactory.getLogger(PlmxmlMapperBean.class);
 
+    /**
+     *
+     */
     public PlmxmlMapperBean() {
         // Empty body
     }
 
+    /**
+     *
+     */
     @Override
     public Category map(final CategoryPlmxml source, final String definitionLocation) {
         final Category category = new Category(source.getName());
@@ -49,6 +56,12 @@ class PlmxmlMapperBean implements PlmxmlMapper {
         return category;
     }
 
+    /**
+     *
+     * @param source
+     * @param definitionLocation
+     * @return
+     */
     public Preference map(final PreferencePlmxml source, final String definitionLocation) {
         final PreferenceImpl preference = new PreferenceImpl(source.getName());
         preference.setDescription(source.getDescription());
@@ -66,10 +79,20 @@ class PlmxmlMapperBean implements PlmxmlMapper {
         return preference;
     }
 
+    /**
+     *
+     * @param type
+     * @return
+     */
     public Type mapType(final String type) {
         return Type.valueOf(type.toUpperCase());
     }
 
+    /**
+     *
+     * @param protectionScope
+     * @return
+     */
     public ProtectionScope mapProtectionScope(final String protectionScope) {
         if (Strings.isNullOrEmpty(protectionScope)
                 || !ProtectionScope.getNames().contains(protectionScope.toUpperCase())) {

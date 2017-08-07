@@ -5,15 +5,15 @@
  * documentation files (the "Software"), to deal in the Software without restriction, including without limitation the
  * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to
  * permit persons to whom the Software is furnished to do so, subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions
  * of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
  * THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
  * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE. 
+ * SOFTWARE.
  */
 
 package org.jag.plmxml.service;
@@ -40,11 +40,17 @@ import org.slf4j.LoggerFactory;
  * @author Jose A. Garcia
  */
 class ArgumentsServiceBean implements ArgumentsService {
+    /** Logger. */
     private static final Logger LOGGER = LoggerFactory.getLogger(ArgumentsServiceBean.class);
+    /** */
     private static final String ARG_INPUT_FILENAMES = "inputFilenames";
+    /** */
     private static final String ARG_OUTPUT_FILENAME = "outputFilename";
+    /** */
     private static final String ARG_PROJECT = "project";
+    /** */
     private static final String ARG_VERSION = "version";
+    /** */
     private static final List<Option> REQUIRED_OPTIONS = Arrays.asList(
             // @formatter:off
             new Option(ARG_INPUT_FILENAMES, true, "Files to be documented, separated by commas"),
@@ -52,14 +58,20 @@ class ArgumentsServiceBean implements ArgumentsService {
             new Option(ARG_VERSION, true, "Version of the project")
     // formatter:on
     );
+
+    /** */
     private static final List<Option> OPTIONAL_OPTIONS = Arrays.asList(
             // @formatter:off
             new Option(ARG_OUTPUT_FILENAME, true, "Rendered output file with the documentation")
     // formatter:on
     );
 
+    /** */
     private final Options options = new Options();
 
+    /**
+     *
+     */
     public ArgumentsServiceBean() {
         for (final Option option : REQUIRED_OPTIONS) {
             option.setRequired(true);
@@ -70,6 +82,9 @@ class ArgumentsServiceBean implements ArgumentsService {
         }
     }
 
+    /**
+     *
+     */
     @Override
     public Arguments parse(final String[] args) {
         try {
@@ -105,6 +120,11 @@ class ArgumentsServiceBean implements ArgumentsService {
         }
     }
 
+    /**
+     *
+     * @param optionValue
+     * @return
+     */
     public List<String> getInputFilenamesFromArgument(final String optionValue) {
         final List<String> inputFilenamesFromArgument = new ArrayList<>();
 
@@ -116,6 +136,11 @@ class ArgumentsServiceBean implements ArgumentsService {
         return inputFilenamesFromArgument;
     }
 
+    /**
+     *
+     * @param inputFilename
+     * @return
+     */
     public String getOutputFilename(final String inputFilename) {
         final Matcher matcher = Pattern.compile("(.*[\\\\|/])?([\\w \\.]+).xml").matcher(inputFilename);
         if (matcher.matches()) {
@@ -124,6 +149,9 @@ class ArgumentsServiceBean implements ArgumentsService {
         return "output.html";
     }
 
+    /**
+     *
+     */
     @Override
     public void printHelp() {
         new HelpFormatter().printHelp("plmxmldoc", options);

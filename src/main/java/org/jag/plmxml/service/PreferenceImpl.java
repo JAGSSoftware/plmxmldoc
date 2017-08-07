@@ -30,89 +30,158 @@ import org.jag.plmxml.domain.Type;
  * @author Jose A. Garcia
  */
 class PreferenceImpl implements Preference {
+    /** */
     private final String name;
+    /** */
     private String description;
+    /** */
     private Type type;
+    /** */
     private ProtectionScope protectionScope;
+    /** */
     private boolean multivalue;
+    /** */
     private boolean disabled;
+    /** */
     private boolean environmentEnabled;
+    /** */
     private String contextName;
+    /** */
     private List<String> values;
+    /** */
     private String definitionLocation;
 
+    /**
+     *
+     * @param name
+     */
     public PreferenceImpl(final String name) {
         this.name = name;
     }
 
+    /**
+     *
+     */
     @Override
     public String getName() {
         return name;
     }
 
+    /**
+     *
+     */
     @Override
     public String getDescription() {
         return description;
     }
 
+    /**
+     *
+     * @param description
+     */
     public void setDescription(final String description) {
         this.description = description;
     }
 
+    /**
+     *
+     */
     @Override
     public Type getType() {
         return type;
     }
 
+    /**
+     *
+     * @param type
+     */
     public void setType(final Type type) {
         this.type = type;
     }
 
+    /**
+     *
+     */
     @Override
     public ProtectionScope getProtectionScope() {
         return protectionScope;
     }
 
+    /**
+     *
+     * @param protectionScope
+     */
     public void setProtectionScope(final ProtectionScope protectionScope) {
         this.protectionScope = protectionScope;
     }
 
+    /**
+     *
+     */
     @Override
     public boolean isMultivalue() {
         return multivalue;
     }
 
+    /**
+     *
+     * @param array
+     */
     public void setMultivalue(final boolean array) {
         this.multivalue = array;
     }
 
+    /**
+     *
+     */
     @Override
     public boolean isDisabled() {
         return disabled;
     }
 
+    /**
+     *
+     * @param disabled
+     */
     public void setDisabled(final boolean disabled) {
         this.disabled = disabled;
     }
 
+    /**
+     *
+     */
     @Override
     public boolean isEnvironmentEnabled() {
         return environmentEnabled;
     }
 
+    /**
+     *
+     * @param environmentEnabled
+     */
     public void setEnvironmentEnabled(final boolean environmentEnabled) {
         this.environmentEnabled = environmentEnabled;
     }
 
+    /**
+     *
+     */
     @Override
     public String getContextName() {
         return contextName;
     }
 
+    /**
+     *
+     * @param contextName
+     */
     public void setContextName(final String contextName) {
         this.contextName = contextName;
     }
 
+    /**
+     *
+     */
     @Override
     public List<String> getValues() {
         if (values == null) {
@@ -121,6 +190,10 @@ class PreferenceImpl implements Preference {
         return Collections.unmodifiableList(values);
     }
 
+    /**
+     *
+     * @param value
+     */
     public void addValue(final String value) {
         if (values == null) {
             values = new ArrayList<>();
@@ -128,6 +201,10 @@ class PreferenceImpl implements Preference {
         values.add(value);
     }
 
+    /**
+     *
+     * @param values
+     */
     public void addValues(final List<String> values) {
         if (this.values == null) {
             this.values = new ArrayList<>();
@@ -135,11 +212,18 @@ class PreferenceImpl implements Preference {
         this.values.addAll(values);
     }
 
+    /**
+     *
+     */
     @Override
     public String getDefinitionLocation() {
         return definitionLocation;
     }
 
+    /**
+     *
+     * @param definitionLocation
+     */
     public void setDefinitionLocation(final String definitionLocation) {
         this.definitionLocation = definitionLocation;
     }

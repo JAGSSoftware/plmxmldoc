@@ -1,7 +1,7 @@
 # plmxmldoc
 
-[![Build Status](https://travis-ci.org/JAGSSoftware/plmxmldoc.svg?branch=master)](https://travis-ci.org/JAGSSoftware/plmxmldoc)
-[![CodeFactor](https://www.codefactor.io/repository/github/jagssoftware/plmxmldoc/badge/master)](https://www.codefactor.io/repository/github/jagssoftware/plmxmldoc/overview/master)
+[![Build Status](https://travis-ci.org/JAGSSoftware/plmxmldoc.svg?branch=develop)](https://travis-ci.org/JAGSSoftware/plmxmldoc)
+[![CodeFactor](https://www.codefactor.io/repository/github/jagssoftware/plmxmldoc/badge/develop)](https://www.codefactor.io/repository/github/jagssoftware/plmxmldoc/overview/develop)
 
 The utility reads a xml [Teamcenter][1] preference file, extracts the information and renders a
 html file with the content.
